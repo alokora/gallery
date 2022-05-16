@@ -82,7 +82,7 @@ const MainComponent=()=>{
   
   const initial=async()=>{
     try{
-      const imagelist=await axios.get('https://api.unsplash.com/search/photos?query=tree&per_page=20&page=1',{
+      const imagelist=await axios.get('https://api.unsplash.com/search/photos?query=human&per_page=20&page=1',{
         headers:{
           Authorization: 'Client-ID qMpGYPhgMo0AAmzlK1BG-10Lg-jrjQPffmxpyCr5GCg'
         }
@@ -107,7 +107,7 @@ const MainComponent=()=>{
            <div className="topTab">
                <div className='imgGallery' style={{fontSize:'30px',fontWeight:400}}>Image Gallery</div>
                <div className="club" style={{display:'flex',justifyContent:'center'}}>
-               <div  className="search" ><input style={{width:(isBiggerScreen?'300px':'250px'),height:'100%',backgroundColor:(isLightMode?'rgb(230,230,230)':'gray'),color:(isLightMode?'black':'white'),borderRadius:'0.4rem',border:'none',paddingLeft:'15px'}} id="imgName" value={searchQuery} onChange={e=>{setSearchQuery(e.target.value);console.log(searchQuery)}} type="text" placeholder=" search here.." /></div>&nbsp;&nbsp;
+               <div  className="search" ><input style={{width:(isBiggerScreen?'300px':'250px'),height:'100%',backgroundColor:(isLightMode?'rgb(230,230,230)':'gray'),color:(isLightMode?'black':'white'),borderRadius:'0.4rem',border:'none',paddingLeft:'15px'}} id="imgName" value={searchQuery} onChange={e=>{setSearchQuery(e.target.value);searchImgs(e.target.value)}} type="text" placeholder=" search here.." /></div>&nbsp;&nbsp;
                <div className="searchBtn">
                  <ThemeProvider theme={theme}>
                  <Button variant="contained" onClick={()=>searchImgs(searchQuery)} color={isLightMode?"neutral2":'neutral'}>Search</Button>
