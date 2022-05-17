@@ -77,7 +77,7 @@ input:focus{
     margin: 1rem 1.5rem 1rem 1.7rem;
     height: fit-content;
     width: fit-content;
-    float:right;
+    float:left;
     border-radius: 0.7rem;
     border-style: inherit;
 
