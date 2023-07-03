@@ -14,12 +14,13 @@ import {useMediaQuery} from './useMediaQuery';
 
 const Cards=({id,src,alt,likes,user})=>{
 
-  const isBiggerScreen = useMediaQuery('(min-width: 500px)');
+  const isBiggerScreen = useMediaQuery();
 
   const [open,setOpen]=useState(false);
   const [open2,setOpen2]=useState(false);
   useEffect(()=>{
-    console.log("inside cards",user);
+    console.log("inside cards",user,isBiggerScreen);
+
     
     
   },[])
@@ -36,15 +37,15 @@ const Cards=({id,src,alt,likes,user})=>{
     transform: 'translate(-50%, -50%)',
     bgcolor: 'transparent',
     border: 'none',
-    width:isBiggerScreen?'50%':'90%',
-    height:isBiggerScreen?'90%':'70%',
+    width:isBiggerScreen?'500px':'350px',
+    height:isBiggerScreen?'600px':'580px',
     boxShadow:0,
     p:0,
     })
   };
   
   return(
-    <div>
+    <div className="cardDiv">
       <Modal
         open={open}
         onClose={handleClose}
@@ -54,7 +55,7 @@ const Cards=({id,src,alt,likes,user})=>{
           <Box sx={{ ...style.container(isBiggerScreen)}}
             onMouseEnter={()=>{setOpen2(true)}} onMouseLeave={()=>{setOpen2(false)}}
             >
-              <img id={`cardimg_${id}2`} src={src.small} width="100%" height='100%' alt="img" className="cardimg" />
+              <div style={{display:'flex',justifyContent:'center',width:'100%',height:'100%'}}><img id={`cardimg_${id}2`} src={src.small} width="100%" height='100%' alt="img" className="cardimg" /></div>
               <Backdrop
                 sx={{ color: '#fff', backgroundColor:'rgba(0, 0, 0, 0.799)' ,zIndex: (theme) => theme.zIndex.drawer + 1}}
                 open={open2}
@@ -110,7 +111,7 @@ const Cards=({id,src,alt,likes,user})=>{
             </Box>
         </div>
       </Modal>
-      <div className="cardDiv">
+     
         <img id={`cardimg_${id}`} style={{borderTopLeftRadius:'0.4rem',borderTopRightRadius:'0.4rem'}} src={src.thumb} alt={alt} onClick={()=>{setOpen(true)}} />
         <div className="nameAndLike">
           <div className="userName">
@@ -132,7 +133,6 @@ const Cards=({id,src,alt,likes,user})=>{
           </div>
         </div>
       </div>
-    </div>
   )
 }
 

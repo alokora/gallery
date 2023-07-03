@@ -41,6 +41,12 @@ div{
     margin-right: 2%;
     margin-top: -5px;
 }
+.grid{
+   display: grid;
+   gap:20px 50px;
+   float: left;
+    
+}
 .search{
     width:'300px' !important;
     height:'38px';
@@ -72,10 +78,11 @@ input:focus{
         
 }
 .cardDiv{
-    border: 1px solid gray;
+    border: 10px solid red;
     margin-left: -10%;
     margin: 1rem 1.5rem 1rem 1.7rem;
     height: fit-content;
+    max-height: 400px;
     width: fit-content;
     float:left;
     border-radius: 0.7rem;

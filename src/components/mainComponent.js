@@ -125,7 +125,7 @@ const MainComponent=()=>{
               </div>
            </div>
            <div className="midSection"></div>
-           {imgs}
+           <div className="grid">{imgs}</div>
         </div>
     )
 }
