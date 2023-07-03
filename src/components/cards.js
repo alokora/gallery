@@ -18,7 +18,7 @@ const Cards=({id,src,alt,likes,user})=>{
   const [open,setOpen]=useState(false);
   const [open2,setOpen2]=useState(false);
   useEffect(()=>{
-    console.log("inside cards",user,isBiggerScreen);
+   // console.log("inside cards",user,isBiggerScreen);
 
     
     
