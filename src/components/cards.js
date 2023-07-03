@@ -2,7 +2,6 @@
 import React, { useState,useEffect } from "react";
 import './mainComponent.css';
 import Backdrop from '@mui/material/Backdrop';
-import axios from 'axios';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
