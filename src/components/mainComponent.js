@@ -82,7 +82,7 @@ const MainComponent=()=>{
   
   const initial=async()=>{
     try{
-      const imagelist=await axios.get('https://api.unsplash.com/search/photos?query=human&per_page=20&page=1',{
+      const imagelist=await axios.get('https://api.unsplash.com/search/photos?query=tree&per_page=20&page=1',{
         headers:{
           Authorization: 'Client-ID qMpGYPhgMo0AAmzlK1BG-10Lg-jrjQPffmxpyCr5GCg'
         }
